@@ -1,0 +1,33 @@
+proxies:
+# VMESS/VLESS
+- name: Vmess_Beon_Intermedia_1606-GAMING-eth1
+  type: vmess
+  server: 103.166.156.192
+  port: 443
+  uuid: 2f1d2121-e024-4bb2-9949-398e1cddf03f
+  alterId: 0
+  cipher: auto
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: push-rtmp-f5.tiktokcdn.com.c.worldfcdn.com
+  network: grpc
+  grpc-opts:
+    grpc-service-name: grpc
+  interface-name: eth1
+  
+- name: VlessNS-grpc-GAMING-eth2
+  type: vless
+  server: 43.229.254.182
+  port: 443
+  uuid: a6362946-4213-476d-a601-ee3a33b953c1
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: push-rtmp-f5.tiktokcdn.com.c.worldfcdn.com
+  network: grpc
+  grpc-opts:
+    grpc-service-name: vless-grpc-VLESSNS
+  interface-name: eth2
+#  TROJAN  
+# SHADOWSOCKS

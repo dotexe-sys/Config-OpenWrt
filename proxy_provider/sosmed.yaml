@@ -1,0 +1,50 @@
+proxies:
+# VMESS/VLESS
+- name: Vmess_Beon_Intermedia_1606-SOSMED-eth1
+  type: vmess
+  server: 103.166.156.192
+  port: 443
+  uuid: 2f1d2121-e024-4bb2-9949-398e1cddf03f
+  alterId: 0
+  cipher: auto
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: push-rtmp-f5.tiktokcdn.com.c.worldfcdn.com
+  network: grpc
+  grpc-opts:
+    grpc-service-name: grpc
+  interface-name: eth1  
+
+- name: Vmess_UAS_1606-SOSMED-eth2
+  type: vmess
+  server: 103.18.79.119
+  port: 443
+  uuid: a86f8238-d2d5-4498-8642-693057268145
+  alterId: 0
+  cipher: auto
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: push-rtmp-f5.tiktokcdn.com.c.worldfcdn.com
+  network: grpc
+  grpc-opts:
+    grpc-service-name: grpc
+  interface-name: eth2
+#  TROJAN
+- name: TRojan-ws_Apik_1606-SOSMED-eth2
+  server: 103.136.18.219
+  port: 443
+  type: trojan
+  password: vvip-Apik1206
+  network: ws
+  sni: push-rtmp-f5.tiktokcdn.com.c.worldfcdn.com
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /trojan
+  headers:
+    Host: push-rtmp-f5.tiktokcdn.com.c.worldfcdn.com
+  interface-name: eth2 
+  
+# SHADOWSOCKS
